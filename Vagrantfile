@@ -35,7 +35,7 @@ Vagrant::Config.run do |config|
         chef.json = {
           :cassandra => {'cluster_name' => 'My Cluster',
                          'initial_token' => server['initial_token'],
-                         'seeds' => seeds.join(","),
+                         'seeds' => seeds,
                          'listen_address' => server['ip'],
                          'rpc_address' => server['ip']}
         }
