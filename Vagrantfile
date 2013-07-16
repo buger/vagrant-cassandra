@@ -2,7 +2,7 @@
 # vi: set ft=ruby :
 
 ## Cassandra cluster settings
-server_count = 3
+server_count = 1
 network = '192.168.2.'
 first_ip = 10
 
@@ -21,7 +21,7 @@ end
 Vagrant::Config.run do |config|
   servers.each do |server|
     config.vm.define server['name'] do |config2|
-      config2.vm.box = "precise"
+      config2.vm.box = "precise64"
       config2.vm.box_url = "http://files.vagrantup.com/precise64.box"
       config2.vm.host_name = server['name']
       config2.vm.network :hostonly, server['ip']
